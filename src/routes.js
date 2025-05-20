@@ -44,7 +44,7 @@ import Notifications from "layouts/notifications";
 import Profile from "layouts/profile";
 import SignIn from "layouts/authentication/sign-in";
 import SignUp from "layouts/authentication/sign-up";
-import Logout from "layouts/authentication/logout";
+
 
 // @mui icons
 import Icon from "@mui/material/Icon";
@@ -113,25 +113,7 @@ const routes = [
     icon: <Icon fontSize="small">assignment</Icon>,
     route: "/signup",
     component: <SignUp />,
-  },
-
-  // {
-  //   type: "collapse",
-  //   name: "Logout",
-  //   key: "logout",
-  //   icon: <Icon>logout</Icon>,
-  //   route: "/logout",
-  //   component: () => null, // This will be handled by a separate component
-  // },
-  
-  {
-    type: "collapse",
-    name: "Logout",
-    key: "logout",
-    icon: <Icon>logout</Icon>,
-    route: "/logout",
-    component: <Logout />,
-  },
+  }, 
 ];
 
 export default routes;

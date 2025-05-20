@@ -21,6 +21,9 @@ import { useLocation, NavLink } from "react-router-dom";
 // prop-types is a library for typechecking of props.
 import PropTypes from "prop-types";
 
+import LogoutButton from "components/LogoutButton"; // Adjust the path if needed
+
+
 // @mui material components
 import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
@@ -179,7 +182,9 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
         }
       />
       <List>{renderRoutes}</List>
-      <MDBox p={2} mt="auto">
+      {/* <MDBox p={2} mt="auto"> */}
+      <MDBox p={2} mt="auto" display="flex" flexDirection="column" gap={1}>
+        <LogoutButton />
         <MDButton
           component="a"
           href="https://www.creative-tim.com/product/material-dashboard-pro-react"

@@ -1,18 +1,4 @@
-/**
-=========================================================
-* Material Dashboard 2 React - v2.2.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
+// src\routes.js
 /** 
   All of the routes for the Material Dashboard 2 React are added here,
   You can add a new route, customize the routes and delete the routes here.
@@ -44,6 +30,10 @@ import Notifications from "layouts/notifications";
 import Profile from "layouts/profile";
 import SignIn from "layouts/authentication/sign-in";
 import SignUp from "layouts/authentication/sign-up";
+
+import ProductList from "./layouts/products/ProductList";
+import AddProduct from "./layouts/products/AddProduct";
+import EditProduct from "./layouts/products/EditProduct";
 
 
 // @mui icons
@@ -114,6 +104,39 @@ const routes = [
     route: "/signup",
     component: <SignUp />,
   }, 
+
+  // {
+  //   type: "collapse",
+  //   name: "Products",
+  //   key: "products",
+  //   icon: <Icon>inventory_2</Icon>,
+  //   collapse: [
+    {
+      type: "collapse", // Required!
+      name: "All Products",
+      key: "all-products",
+      route: "/products",
+      component: <ProductList />,
+    },
+    {
+      type: "collapse",
+      name: "Add Product",
+      key: "add-product",
+      route: "/products/add",
+      component: <AddProduct />,
+    },
+  //   ],
+  // },
+  // {
+  //   type: "collapse", // Hidden in sidenav
+  //   name: "Edit Product",
+  //   key: "edit-product",
+  //   route: "/products/edit/:id",
+  //   component: <EditProduct />,
+  //   noCollapse: true,
+  //   invisible: true,
+  // },
+
 ];
 
 export default routes;

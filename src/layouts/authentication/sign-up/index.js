@@ -1,3 +1,4 @@
+// src\layouts\authentication\sign-up\index.js
 /**
 =========================================================
 * Material Dashboard 2 React - v2.2.0

@@ -33,11 +33,13 @@ import SignUp from "layouts/authentication/sign-up";
 
 import ProductList from "./layouts/products/ProductList";
 import AddProduct from "./layouts/products/AddProduct";
-import EditProduct from "./layouts/products/EditProduct";
+// import EditProduct from "./layouts/products/EditProduct";
+import ProductCatalog from "./layouts/products/ProductCatalog";
 
 
 // @mui icons
 import Icon from "@mui/material/Icon";
+import StorefrontIcon from "@mui/icons-material/Storefront";
 
 const routes = [
   {
@@ -136,6 +138,16 @@ const routes = [
   //   noCollapse: true,
   //   invisible: true,
   // },
+
+
+  {
+    type: "collapse",
+    name: "Shop",
+    key: "shop",
+    // icon: <ShopIcon />, // import from MUI or use another icon
+    route: "/shop",
+    component: <ProductCatalog />,
+  },
 
 ];
 

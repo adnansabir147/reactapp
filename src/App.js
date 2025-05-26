@@ -14,6 +14,8 @@ import Dashboard from "./layouts/dashboard";
 import ProductList from "./layouts/products/ProductList";
 import AddProduct from "./layouts/products/AddProduct";
 import EditProduct from "./layouts/products/EditProduct";
+import ProductCatalog from "./layouts/products/ProductCatalog";
+import ProductDetail from "./layouts/products/ProductDetail";
 
 
 // import { AuthProvider, useAuth } from "./contexts/AuthContext";
@@ -259,6 +261,15 @@ export default function App() {
           path="/products/edit/:id"
           element={user ? <EditProduct /> : <Navigate to="/signin" replace />}
         />
+        <Route
+            path="/shop"
+            element={user ? <ProductCatalog /> : <Navigate to="/signin" replace />}
+        />
+        <Route
+            path="/products/:id"
+            element={user ? <ProductDetail /> : <Navigate to="/signin" replace />}
+          />
+
       </Routes>
     </ThemeProvider>
   );

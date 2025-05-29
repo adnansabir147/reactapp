@@ -17,6 +17,11 @@ import EditProduct from "./layouts/products/EditProduct";
 import ProductCatalog from "./layouts/products/ProductCatalog";
 import ProductDetail from "./layouts/products/ProductDetail";
 
+// import CartPage from ".layouts/Cart/CartPage";
+import CartPage from "layouts/Cart/CartPage";
+import MyOrdersPage from "layouts/Orders/MyOrdersPage";
+
+
 
 // import { AuthProvider, useAuth } from "./contexts/AuthContext";
 
@@ -213,6 +218,18 @@ export default function App() {
             path="/products/edit/:id"
             element={user ? <EditProduct /> : <Navigate to="/signin" replace />}
           />
+
+          {/* ✅ Cart Route */}
+          <Route
+            path="/cart"
+            element={user ? <CartPage /> : <Navigate to="/signin" replace />}
+          />
+
+          {/* ✅ My Orders Route */}
+          <Route
+            path="/orders"
+            element={user ? <MyOrdersPage /> : <Navigate to="/signin" replace />}
+          />
         </Routes>
       </ThemeProvider>
     </CacheProvider>
@@ -268,6 +285,18 @@ export default function App() {
         <Route
             path="/products/:id"
             element={user ? <ProductDetail /> : <Navigate to="/signin" replace />}
+          />
+         
+          {/* ✅ Cart Route */}
+          <Route
+            path="/cart"
+            element={user ? <CartPage /> : <Navigate to="/signin" replace />}
+          />
+
+          {/* ✅ My Orders Route */}
+          <Route
+            path="/orders"
+            element={user ? <MyOrdersPage /> : <Navigate to="/signin" replace />}
           />
 
       </Routes>

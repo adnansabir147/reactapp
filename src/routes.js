@@ -36,10 +36,16 @@ import AddProduct from "./layouts/products/AddProduct";
 // import EditProduct from "./layouts/products/EditProduct";
 import ProductCatalog from "./layouts/products/ProductCatalog";
 
+import CartPage from "./layouts/Cart/CartPage";
+import MyOrdersPage from "./layouts/Orders/MyOrdersPage";
+
+
 
 // @mui icons
 import Icon from "@mui/material/Icon";
 import StorefrontIcon from "@mui/icons-material/Storefront";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import ReceiptLongIcon from "@mui/icons-material/ReceiptLong";
 
 const routes = [
   {
@@ -107,47 +113,52 @@ const routes = [
     component: <SignUp />,
   }, 
 
-  // {
-  //   type: "collapse",
-  //   name: "Products",
-  //   key: "products",
-  //   icon: <Icon>inventory_2</Icon>,
-  //   collapse: [
-    {
-      type: "collapse", // Required!
-      name: "All Products",
-      key: "all-products",
-      route: "/products",
-      component: <ProductList />,
-    },
-    {
-      type: "collapse",
-      name: "Add Product",
-      key: "add-product",
-      route: "/products/add",
-      component: <AddProduct />,
-    },
-  //   ],
-  // },
-  // {
-  //   type: "collapse", // Hidden in sidenav
-  //   name: "Edit Product",
-  //   key: "edit-product",
-  //   route: "/products/edit/:id",
-  //   component: <EditProduct />,
-  //   noCollapse: true,
-  //   invisible: true,
-  // },
+  // 🛒 Product Routes
+  {
+    type: "collapse",
+    name: "All Products",
+    key: "all-products",
+    icon: <StorefrontIcon />,
+    route: "/products",
+    component: <ProductList />,
+  },
+  {
+    type: "collapse",
+    name: "Add Product",
+    key: "add-product",
+    icon: <Icon fontSize="small">add</Icon>,
+    route: "/products/add",
+    component: <AddProduct />,
+  },
 
-
+  // 🛍️ Shopping Routes
   {
     type: "collapse",
     name: "Shop",
     key: "shop",
-    // icon: <ShopIcon />, // import from MUI or use another icon
+    icon: <StorefrontIcon />,
     route: "/shop",
     component: <ProductCatalog />,
   },
+
+  {
+    type: "collapse",
+    name: "Cart",
+    key: "cart",
+    icon: <ShoppingCartIcon />,
+    route: "/cart",
+    component: <CartPage />,
+  },
+  {
+    type: "collapse",
+    name: "My Orders",
+    key: "my-orders",
+    icon: <ReceiptLongIcon />,
+    route: "/orders",
+    component: <MyOrdersPage />,
+  },
+
+
 
 ];
 
